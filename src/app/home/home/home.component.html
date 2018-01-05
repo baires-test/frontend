@@ -1,15 +1,12 @@
-<div class="album">
-  <div class="row">
-    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let image of images | async">
+<mat-grid-list [cols]="cols" [gutterSize]="16">
 
-        <div class="image-container">
-          <img class="card-img-top" [src]="image | thumbnail" alt="">
-          <div class="card-body">
-            <h5>{{image | thumbnailTitle}}</h5>
-          </div>
-        </div>
+  <mat-grid-tile *ngFor="let image of images"
+                 class="image-card mat-elevation-z2"
+                 (click)="openActionBar(image)"
+  >
+    <img [src]="image | thumbnail" [alt]="image | thumbnailTitle">
 
-    </div>
-  </div>
-</div>
+    <mat-grid-tile-footer>{{image | thumbnailTitle}}</mat-grid-tile-footer>
+  </mat-grid-tile>
 
+</mat-grid-list>

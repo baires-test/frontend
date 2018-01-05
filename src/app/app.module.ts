@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CoreModule} from './core/core.module';
 import {UiModule} from './ui/ui.module';
-import {MediaMatcher} from '@angular/cdk/layout';
+import {MediaMatcher, BreakpointObserver} from '@angular/cdk/layout';
+import {ActiveSnackbarComponent} from './ui/active-snackbar/active-snackbar.component';
+import {DeletedSnackbarComponent} from './ui/deleted-snackbar/deleted-snackbar.component';
 
 
 @NgModule({
@@ -15,11 +17,16 @@ import {MediaMatcher} from '@angular/cdk/layout';
   imports: [
     CoreModule,
     AppRoutingModule,
-    UiModule
+    UiModule,
   ],
   bootstrap: [AppComponent],
   providers: [
-    MediaMatcher
+    MediaMatcher,
+    BreakpointObserver,
+  ],
+  entryComponents: [
+    ActiveSnackbarComponent,
+    DeletedSnackbarComponent,
   ]
 })
 export class AppModule { }

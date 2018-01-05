@@ -1,3 +1,12 @@
-<p>
-  recycle works!
-</p>
+<mat-grid-list [cols]="cols" [gutterSize]="16">
+
+  <mat-grid-tile *ngFor="let image of images"
+                 class="image-card mat-elevation-z2"
+                 (click)="openActionBar(image)"
+  >
+    <img [src]="image | thumbnail" [alt]="image | thumbnailTitle">
+
+    <mat-grid-tile-footer>{{image | thumbnailTitle}}</mat-grid-tile-footer>
+  </mat-grid-tile>
+
+</mat-grid-list>

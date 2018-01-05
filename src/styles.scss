@@ -39,6 +39,7 @@ header {
     .button-card {
       display: flex;
       flex-direction: column;
+      margin: 0 1em;
       .text {
         margin-top: 10px;
       }
@@ -68,11 +69,36 @@ header {
   padding-top: 30px;
   text-align: center;
 }
-@media (max-width: 700px){
+
+.container {
+  margin: -20px auto 0;
+  width: 1280px;
+  max-width: 90%;
+  .album {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .image-card {
+      width: 200px;
+    }
+  }
+}
+app-active-snackbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 840px){
   .headline {
     padding-top: 10px;
+    h1 {
+      font-weight: normal;
+    }
   }
   header {
-    padding-bottom: 10px;
+    padding-bottom: 30px;
+  }
+  .container {
+    margin-top: -10px;
   }
 }

@@ -1,5 +1,9 @@
 <mat-toolbar color="primary" class="mat-elevation-z6">
-  <span>BairesDev - Fullstack Coding Challenge</span>
+  <span>BairesDev </span> <span class="coding-challenge" [hidden]="isMobile"> Fullstack Coding Challenge</span>
+  <span class="spacer"></span>
+  <button mat-icon-button class="notification-icon" (click)="toggleNotification()">
+    <mat-icon>notifications</mat-icon>
+  </button>
 </mat-toolbar>
 <header>
   <div class="headline">

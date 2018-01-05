@@ -3,4 +3,11 @@ mat-toolbar {
   top: 0;
   left: 0;
   z-index: 2;
+  flex-direction: row;
+  .spacer {
+    flex: 1 1 auto;
+  }
+}
+.coding-challenge {
+  margin-left: 1em;
 }

@@ -4,8 +4,11 @@ import {SharedModule} from '../shared/shared.module';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { SnackbarComponent } from './snackbar/snackbar.component';
 import { NavComponent } from './nav/nav.component';
+import { ActiveSnackbarComponent } from './active-snackbar/active-snackbar.component';
+import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
+import { DeletedSnackbarComponent } from './deleted-snackbar/deleted-snackbar.component';
+import { RestoreConfirmationComponent } from './restore-confirmation/restore-confirmation.component';
 
 @NgModule({
   imports: [
@@ -14,12 +17,21 @@ import { NavComponent } from './nav/nav.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SnackbarComponent,
     NavComponent,
+    ActiveSnackbarComponent,
+    DeleteConfirmationComponent,
+    DeletedSnackbarComponent,
+    RestoreConfirmationComponent,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
+    ActiveSnackbarComponent,
+    DeletedSnackbarComponent,
+  ],
+  entryComponents: [
+    DeleteConfirmationComponent,
+    RestoreConfirmationComponent,
   ]
 })
 export class UiModule { }

@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule} from '@angular/router';
-import {ApiService} from './api.service';
+
 import {HttpClientModule} from '@angular/common/http';
 import { ThumbnailPipe } from './thumbnail.pipe';
 import { ThumbnailTitlePipe } from './thumbnail-title.pipe';
-import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule, MatCardModule, MatDialog, MatDialogModule, MatGridListModule, MatIconModule,
+  MatToolbarModule
+} from '@angular/material';
+import { ImagePathPipe } from './image-path.pipe';
 
 @NgModule({
   imports: [
@@ -15,10 +19,14 @@ import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/materia
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
+    MatDialogModule,
   ],
   declarations: [
     ThumbnailPipe,
     ThumbnailTitlePipe,
+    ImagePathPipe,
   ],
   exports: [
     CommonModule,
@@ -29,9 +37,13 @@ import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/materia
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
+    MatDialogModule,
+    ImagePathPipe,
   ],
   providers: [
-    ApiService,
+    MatDialog,
   ]
 })
 export class SharedModule { }

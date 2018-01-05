@@ -1,0 +1,13 @@
+<span>{{image | thumbnailTitle}}</span>
+
+<button mat-icon-button (click)="deleteImage()" title="Delete">
+  <mat-icon>delete</mat-icon>
+</button>
+
+<a mat-icon-button [href]="image | imagePath">
+  <mat-icon>file_download</mat-icon>
+</a>
+
+<span class="spacer"></span>
+
+<button mat-raised-button color="accent" (click)="dismissSnackbar()">Close</button>
