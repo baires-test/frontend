@@ -57,9 +57,6 @@
     "styleExt": "scss",
     "component": {
       "spec": false
-    },
-    "serve": {
-      "host": "192.168.0.6"
     }
   }
 }
