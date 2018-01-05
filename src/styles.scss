@@ -1,1 +1,78 @@
-@import '~bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons|Roboto');
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$app-primary: mat-palette($mat-indigo);
+$app-accent:  mat-palette($mat-pink);
+
+$app-theme:   mat-light-theme($app-primary, $app-accent);
+
+@include angular-material-theme($app-theme);
+
+body {
+  margin: 0;
+  font-family: Roboto, monospace;
+}
+app-root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: absolute;
+  top: 56px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+header {
+  background-color: mat-color($app-primary);
+  .nav-buttons {
+    color: mat-color($app-primary, 50);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .button-card {
+      display: flex;
+      flex-direction: column;
+      .text {
+        margin-top: 10px;
+      }
+    }
+    .mat-icon-button {
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      .mat-icon {
+        line-height: 50px;
+        width: 50px;
+        height: 50px;
+      }
+      mat-icon {
+        color: mat-color($app-primary, 50);
+        font-size: 3em;
+      }
+      &.active {
+        border: 4px solid mat-color($app-primary, 50);
+      }
+    }
+  }
+  padding-bottom: 70px;
+}
+.headline {
+  color: mat-color($app-primary, 50);
+  padding-top: 30px;
+  text-align: center;
+}
+@media (max-width: 700px){
+  .headline {
+    padding-top: 10px;
+  }
+  header {
+    padding-bottom: 10px;
+  }
+}

@@ -1,14 +1,23 @@
 <div class="nav-buttons">
+  <div class="button-card">
+    <button mat-icon-button
+            [routerLink]="['/']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}"
+    >
+      <mat-icon>perm_media</mat-icon>
+    </button>
+    <span class="text">Active</span>
+  </div>
 
-  <a [routerLink]="['/']"
-     class="btn"
-     routerLinkActive="btn-primary"
-     [routerLinkActiveOptions]="{exact: true}"
-  >Active</a>
+  <div class="button-card">
+    <button mat-icon-button
+            [routerLink]="['/recycle']"
+            routerLinkActive="active">
+      <mat-icon>delete_sweep</mat-icon>
+    </button>
+    <span class="text">Deleted</span>
+  </div>
 
-  <a [routerLink]="['/recycle']"
-     class="btn"
-     routerLinkActive="btn-primary"
-  >Deleted</a>
 
 </div>

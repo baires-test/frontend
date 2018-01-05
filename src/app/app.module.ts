@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CoreModule} from './core/core.module';
 import {UiModule} from './ui/ui.module';
+import {MediaMatcher} from '@angular/cdk/layout';
 
 
 @NgModule({
@@ -16,7 +17,9 @@ import {UiModule} from './ui/ui.module';
     AppRoutingModule,
     UiModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    MediaMatcher
+  ]
 })
 export class AppModule { }

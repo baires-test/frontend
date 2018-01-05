@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
+import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/observable/of';
 
 import {environment} from '../../environments/environment';
-import {Image} from '../models/image.model';
-import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class ApiService {
@@ -17,12 +16,16 @@ export class ApiService {
 
   getActiveImages(): Observable<any> {
     return this.httpClient
-      .get(`${this.apiUrl}/images`);
+      .get(`${this.apiUrl}/images`, {
+        responseType: 'json'
+      });
   }
 
   getDeletedImages(): Observable<any> {
     return this.httpClient
-      .get(`${this.apiUrl}/images/deleted`);
+      .get(`${this.apiUrl}/images/deleted`, {
+        responseType: 'json'
+      });
   }
 
 }

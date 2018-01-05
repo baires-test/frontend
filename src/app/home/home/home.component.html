@@ -1,5 +1,15 @@
-<ul>
-  <li *ngFor="let image of images | async">
-    {{image.id}}
-  </li>
-</ul>
+<div class="album">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let image of images | async">
+
+        <div class="image-container">
+          <img class="card-img-top" [src]="image | thumbnail" alt="">
+          <div class="card-body">
+            <h5>{{image | thumbnailTitle}}</h5>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
