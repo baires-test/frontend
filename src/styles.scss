@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons|Roboto');
 @import '~@angular/material/theming';
-
+@import '~dropzone/dist/min/dropzone.min.css';
+@import '~dropzone/dist/min/basic.min.css';
 @include mat-core();
 
 $app-primary: mat-palette($mat-indigo);
@@ -74,6 +75,7 @@ header {
   margin: -20px auto 0;
   width: 1280px;
   max-width: 90%;
+  position: relative;
   .album {
     display: flex;
     align-items: center;

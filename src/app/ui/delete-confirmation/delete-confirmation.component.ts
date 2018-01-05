@@ -44,6 +44,7 @@ export class DeleteConfirmationComponent implements OnInit, OnDestroy {
       .subscribe(response => {
 
         this.apiService.getActiveImages();
+        this.apiService.getDeletedImages();
         this.uiService.closeDialgoBox();
         this.uiService.dismissActiveSnackbar();
       });

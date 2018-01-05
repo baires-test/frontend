@@ -44,6 +44,7 @@ export class RestoreConfirmationComponent implements OnInit, OnDestroy {
       .subscribe(response => {
 
         this.apiService.getDeletedImages();
+        this.apiService.getActiveImages();
         this.uiService.closeDialgoBox();
         this.uiService.dismissActiveSnackbar();
       });

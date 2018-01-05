@@ -10,6 +10,7 @@ import { DeleteConfirmationComponent } from './delete-confirmation/delete-confir
 import { DeletedSnackbarComponent } from './deleted-snackbar/deleted-snackbar.component';
 import { RestoreConfirmationComponent } from './restore-confirmation/restore-confirmation.component';
 
+
 @NgModule({
   imports: [
     SharedModule

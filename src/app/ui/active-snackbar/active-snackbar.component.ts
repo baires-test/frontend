@@ -30,7 +30,7 @@ export class ActiveSnackbarComponent implements OnInit, OnDestroy {
     this.uiService
       .closeDialogBoxChange$
       .subscribe(close => {
-        if (close) {
+        if (close && this.dialogRef) {
           this.dialogRef.close();
         }
       });

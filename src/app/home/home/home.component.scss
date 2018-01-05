@@ -2,3 +2,10 @@ mat-grid-tile {
   cursor: pointer;
   z-index: 1;
 }
+
+.add-image {
+  position: absolute;
+  top: -30px;
+  left: 20px;
+  z-index: 2;
+}

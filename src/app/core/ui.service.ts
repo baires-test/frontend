@@ -28,6 +28,9 @@ export class UiService {
   closeDialogBoxSubject: Subject<boolean> = new Subject<boolean>();
   closeDialogBoxChange$: Observable<boolean> = this.closeDialogBoxSubject.asObservable();
 
+  newImageSubject: Subject<boolean> = new Subject<boolean>();
+  newImageChange$: Observable<boolean> = this.newImageSubject.asObservable();
+
   constructor() {
 
   }
@@ -56,6 +59,10 @@ export class UiService {
   openDeletedSnackbar(image: Image) {
     this.activeImage = image;
     this.deletedSnackbarSubject.next(image);
+  }
+
+  openNewImageUpload() {
+    this.newImageSubject.next(true);
   }
 
 }

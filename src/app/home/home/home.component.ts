@@ -1,10 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Subscription} from 'rxjs/Subscription';
+import {MatDialog, MatDialogRef} from '@angular/material';
 
 import {ApiService} from '../../core/api.service';
 import {Image} from '../../models/image.model';
 import {UiService} from '../../core/ui.service';
-import {Subscription} from 'rxjs/Subscription';
+import {ImageUploadComponent} from '../../shared/image-upload/image-upload.component';
 
 @Component({
   selector: 'app-home',
@@ -18,9 +19,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   resolutionSubscription: Subscription;
   cols = 4;
 
+  dialogRef: MatDialogRef<any>;
+
   constructor(
     private apiService: ApiService,
     private uiService: UiService,
+    private dialog: MatDialog,
   ) {
     this.resolutionSubscription = this.uiService
       .resolutionChange$
@@ -47,6 +51,14 @@ export class HomeComponent implements OnInit, OnDestroy {
       .subscribe(images => {
         this.images = images;
       });
+
+    this.uiService
+      .closeDialogBoxChange$
+      .subscribe(close => {
+        if (close && this.dialogRef) {
+          this.dialogRef.close();
+        }
+      });
   }
 
   ngOnInit() {
@@ -56,6 +68,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   openActionBar(image: Image) {
     this.uiService.openActiveSnackbar(image);
+  }
+
+  openNewImage() {
+    this.dialogRef = this.dialog.open(ImageUploadComponent);
   }
 
   ngOnDestroy() {

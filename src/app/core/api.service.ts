@@ -66,4 +66,9 @@ export class ApiService {
       });
   }
 
+  uploadImage(imageData: any): Observable<any> {
+    return this.httpClient
+      .post(`${this.apiUrl}/images`, imageData);
+  }
+
 }

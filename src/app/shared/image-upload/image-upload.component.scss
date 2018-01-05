@@ -1,0 +1,13 @@
+form {
+  width: 300px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  app-dropzone {
+    margin-bottom: 1em;
+  }
+  .form-error {
+    font-size: 0.8em;
+    margin: 1em 0;
+  }
+}

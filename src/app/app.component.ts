@@ -6,6 +6,7 @@ import {ActiveSnackbarComponent} from './ui/active-snackbar/active-snackbar.comp
 import {UiService} from './core/ui.service';
 import {DeletedSnackbarComponent} from './ui/deleted-snackbar/deleted-snackbar.component';
 import {NavigationStart, Router} from '@angular/router';
+import {ApiService} from './core/api.service';
 
 @Component({
   selector: 'app-root',
@@ -22,12 +23,21 @@ export class AppComponent {
     private uiService: UiService,
     private breakpointObserver: BreakpointObserver,
     private matSnackbar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private apiService: ApiService,
   ) {
     this.matchBreakpoints();
     this.observeActiveSnackbar();
     this.observeDismissSnackbar();
     this.onRouteChange();
+    this.pollForChanges();
+  }
+
+  pollForChanges() {
+    setInterval(() => {
+      this.apiService.getActiveImages();
+      this.apiService.getDeletedImages();
+    }, 5000);
   }
 
   onRouteChange() {

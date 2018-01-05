@@ -8,6 +8,7 @@ import {UiModule} from './ui/ui.module';
 import {MediaMatcher, BreakpointObserver} from '@angular/cdk/layout';
 import {ActiveSnackbarComponent} from './ui/active-snackbar/active-snackbar.component';
 import {DeletedSnackbarComponent} from './ui/deleted-snackbar/deleted-snackbar.component';
+import {DropzoneComponent} from './shared/dropzone/dropzone.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {DeletedSnackbarComponent} from './ui/deleted-snackbar/deleted-snackbar.c
   entryComponents: [
     ActiveSnackbarComponent,
     DeletedSnackbarComponent,
+    DropzoneComponent,
   ]
 })
 export class AppModule { }

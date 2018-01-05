@@ -1,0 +1,44 @@
+<h1 mat-dialog-title>Image Upload</h1>
+
+<div mat-dialog-content>
+
+  <form [formGroup]="uploadForm"
+        (submit)="submit()"
+        id="imageUploadForm">
+
+    <app-dropzone
+      [containerId]="'newImageUpload'"
+      [maxFiles]="1"
+      [acceptedFiles]="'image/*'"
+      (onFileError)="onFileError($event)"
+      (onAcceptedFiles)="onAcceptedFiles($event)"
+    ></app-dropzone>
+
+    <mat-form-field>
+      <input matInput type="text"
+             placeholder="Image Name"
+             formControlName="image_name"
+      >
+      <mat-error>Image Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-error class="form-error">
+      {{info}}
+    </mat-error>
+
+  </form>
+</div>
+
+<div mat-dialog-actions>
+
+
+
+  <div *ngIf="!sending">
+    <button mat-raised-button type="submit" (click)="submit()">Submit</button>
+    <button mat-raised-button mat-dialog-close  color="accent">Cancel</button>
+  </div>
+
+  <div *ngIf="sending">
+    Processing the information
+  </div>
+</div>
